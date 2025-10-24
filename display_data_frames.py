@@ -1,3 +1,7 @@
+"""
+    This program is designed to show to use data frames in pandas
+"""
+
 import pandas as pd
 
 dataFrames = {
@@ -8,4 +12,10 @@ dataFrames = {
 
 df = pd.DataFrame(dataFrames)
 
+print("The date frames")
 print(df)
+
+age_series = df["Age"]
+
+print("\n The Age column is extracted:")
+print(age_series)
