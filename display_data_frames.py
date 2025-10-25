@@ -69,3 +69,7 @@ print(people)
 people_with_ages = pd.merge(people, ages_df, on='id', how='outer')
 print("\n People with their ages:")
 print(people_with_ages)
+
+# cleaning
+people_with_ages['Age'] = people_with_ages['Age'].fillna(people_with_ages['Age'].mean())
+print('\nCleaning the age column with the mean:\n', people_with_ages)
