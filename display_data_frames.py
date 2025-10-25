@@ -13,6 +13,7 @@ data = {
 }
 
 american = {
+    "id": [1, 2, 3],
     "Name": ["Scott", "Michael", "Marc"],
     "City": ["Pensylvania", "Washinton DC", "California"]
 }
@@ -20,9 +21,17 @@ american = {
 american_df = pd.DataFrame(american)
 
 malagasy = {
+    "id": [4, 5, 6],
     "Name": ["Andry", "Fitia", "Tolotra"],
     "City": ["Tana", "Antsirabe", "Toamasina"]
 }
+
+ages = {
+    "id": [2, 3, 4, 6],
+    "Age": [20, 56, 18, 25]
+}
+
+ages_df = pd.DataFrame(ages)
 
 malagasy_df = pd.DataFrame(malagasy)
 
@@ -55,3 +64,8 @@ print(two_first_rows)
 people = pd.concat([american_df, malagasy_df], keys=['American', 'Malagasy'])
 print("\n Concatenate the American and Malagasy data frames:")
 print(people)
+
+# joining
+people_with_ages = pd.merge(people, ages_df, on='id', how='outer')
+print("\n People with their ages:")
+print(people_with_ages)
