@@ -17,3 +17,10 @@ print(df)
 city_data = df.groupby('City').mean(numeric_only=True)
 print('\nGrouped by city with the means of numeric data:')
 print(city_data)
+
+city_elaborated = df.groupby('City').agg({
+    'Age': ['mean', 'min', 'max'],
+    'Salary': ['sum', 'mean']
+})
+print('\nThe city data with more operations:')
+print(city_elaborated)
